@@ -2,5 +2,7 @@
 </script>
 
 <main>
-  <h1>Hello Unfold</h1>
+  <div class="flex h-screen justify-center items-center">
+    <h1>Hello Unfold</h1>
+  </div>
 </main>
