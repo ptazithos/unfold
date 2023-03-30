@@ -1,18 +1,18 @@
 <script lang="ts">
-  let theme = "monokai";
+  import { theme, ThemeName } from "../theme/store";
 
   function changeTheme() {
-    if (theme === "monokai") {
-      theme = "default";
+    if ($theme === ThemeName.DEFAULT) {
+      theme.set(ThemeName.MONOKAI);
     } else {
-      theme = "monokai";
+      theme.set(ThemeName.DEFAULT);
     }
   }
 </script>
 
-<main class={theme}>
+<main class={$theme}>
   <div class="flex flex-col h-screen justify-center items-center bg-$primary-1">
     <h1>Hello Unfold</h1>
-    <button class="bg-white " on:click={changeTheme}>change theme</button>
+    <button on:click={changeTheme} class="bg-white">change theme</button>
   </div>
 </main>
