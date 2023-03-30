@@ -1,7 +1,2 @@
-.monokai {
-    --primary-1: #222222
-}
-
-.default {
-    --primary-1: #dddddd
-}
+@import "default.css";
+@import "monokai.css";
