@@ -10,15 +10,9 @@
   }
 </script>
 
-<main>
-  <div class={theme}>
-    <div
-      class="flex flex-col h-screen justify-center items-center bg-$primary-1"
-    >
-      <h1>Hello Unfold</h1>
-      <button class="bg-white border-gray-50" on:click={changeTheme}
-        >change theme</button
-      >
-    </div>
+<main class={theme}>
+  <div class="flex flex-col h-screen justify-center items-center bg-$primary-1">
+    <h1>Hello Unfold</h1>
+    <button class="bg-white " on:click={changeTheme}>change theme</button>
   </div>
 </main>
