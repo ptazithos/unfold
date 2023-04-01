@@ -1,6 +1,7 @@
 <script lang="ts">
   import { theme, ThemeName } from "../../../theme/store";
   import Button from "../../components/Button.svelte";
+  import ConfigContainer from "./components/ConfigContainer.svelte";
 
   function changeTheme() {
     if ($theme === ThemeName.DEFAULT) {
@@ -11,7 +12,7 @@
   }
 </script>
 
-<div class="p-2 border-1 inline-block">
+<ConfigContainer>
   <div>Current System is {$theme}</div>
   <Button content={"Switch Theme"} onClick={changeTheme} />
-</div>
+</ConfigContainer>
