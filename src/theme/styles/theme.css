@@ -1,2 +1,6 @@
 @import "default.css";
 @import "monokai.css";
+
+:root{
+    font-size: 16px;
+}

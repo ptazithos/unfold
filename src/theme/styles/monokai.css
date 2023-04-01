@@ -1,4 +1,11 @@
 
 .monokai {
-    --background-1: #222222
+    --background-1: #222222;
+    --background-2: #191919;
+
+    --highlight-1: #4B494C;
+
+    --font-1: #CECECE;
+
+    color: var(--font-1);
 }

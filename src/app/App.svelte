@@ -1,20 +1,12 @@
 <script lang="ts">
   import { theme, ThemeName } from "../theme/store";
-
-  function changeTheme() {
-    if ($theme === ThemeName.DEFAULT) {
-      theme.set(ThemeName.MONOKAI);
-    } else {
-      theme.set(ThemeName.DEFAULT);
-    }
-  }
+  import Toolbar from "./features/Toolbar/Toolbar.svelte";
+  import ThemeSwitcher from "./features/Debug/ThemeSwitcher.svelte";
 </script>
 
 <main class={$theme}>
-  <div
-    class="flex flex-col h-screen justify-center items-center bg-$background-1"
-  >
-    <h1>Hello Unfold</h1>
-    <button on:click={changeTheme} class="bg-white">change theme</button>
+  <div class="h-screen bg-$background-1">
+    <Toolbar />
+    <ThemeSwitcher />
   </div>
 </main>
