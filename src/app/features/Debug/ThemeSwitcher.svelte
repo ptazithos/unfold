@@ -13,6 +13,6 @@
 </script>
 
 <ConfigContainer>
-  <div>Current System is {$theme}</div>
+  <div>Current theme is {$theme}</div>
   <Button content={"Switch Theme"} onClick={changeTheme} />
 </ConfigContainer>
