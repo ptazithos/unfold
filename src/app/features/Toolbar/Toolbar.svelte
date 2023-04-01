@@ -1,4 +1,4 @@
 <script lang="ts">
 </script>
 
-<div class="w-full h-10 bg-$background-2" />
+<div class="w-full h-8 bg-$background-2" />

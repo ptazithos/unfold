@@ -1,5 +1,7 @@
 <script lang="ts">
   import { theme, ThemeName } from "../../../theme/store";
+  import Button from "../../components/Button.svelte";
+
   function changeTheme() {
     if ($theme === ThemeName.DEFAULT) {
       theme.set(ThemeName.MONOKAI);
@@ -11,7 +13,5 @@
 
 <div class="p-2 border-1 inline-block">
   <div>Current System is {$theme}</div>
-  <button on:click={changeTheme} class="hover:bg-$highlight-1 px-2"
-    >Switch Theme</button
-  >
+  <Button content={"Switch Theme"} onClick={changeTheme} />
 </div>
