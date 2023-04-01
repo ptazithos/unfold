@@ -6,12 +6,14 @@
     addMessages,
   } from "svelte-i18n";
   import en from "../../../translation/en.json";
+  import cn from "../../../translation/cn.json";
 
   addMessages("en", en);
+  addMessages("cn", cn);
 
   init({
     fallbackLocale: "en",
-    initialLocale: getLocaleFromNavigator(),
+    initialLocale: "en",
   });
 </script>
 

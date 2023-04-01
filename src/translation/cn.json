@@ -1,0 +1,7 @@
+{
+    "debug":{
+        "current_theme":"当前主题为 {theme}",
+        "switch_theme": "切换主题",
+        "current_zoom_level": "当前的缩放百分比为 {percent}%"
+    }
+}
