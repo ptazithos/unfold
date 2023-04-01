@@ -11,7 +11,9 @@
 </script>
 
 <main class={$theme}>
-  <div class="flex flex-col h-screen justify-center items-center bg-$primary-1">
+  <div
+    class="flex flex-col h-screen justify-center items-center bg-$background-1"
+  >
     <h1>Hello Unfold</h1>
     <button on:click={changeTheme} class="bg-white">change theme</button>
   </div>
