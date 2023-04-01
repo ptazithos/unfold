@@ -2,6 +2,7 @@
   import { theme, ThemeName } from "../../../theme/store";
   import Button from "../../components/Button.svelte";
   import ConfigContainer from "./components/ConfigContainer.svelte";
+  import { _ } from "svelte-i18n";
 
   function changeTheme() {
     if ($theme === ThemeName.DEFAULT) {
@@ -13,6 +14,6 @@
 </script>
 
 <ConfigContainer>
-  <div>Current theme is {$theme}</div>
-  <Button content={"Switch Theme"} onClick={changeTheme} />
+  <div>{$_({ id: "debug.current_theme", values: { theme: $theme } })}</div>
+  <Button content={$_({ id: "debug.switch_theme" })} onClick={changeTheme} />
 </ConfigContainer>
