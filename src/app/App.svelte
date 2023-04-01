@@ -4,10 +4,12 @@
   import Toolbar from "./features/Toolbar/Toolbar.svelte";
   import ThemeSwitcher from "./features/Debug/ThemeSwitcher.svelte";
   import ZoomConfig from "./features/Debug/ZoomConfig.svelte";
+  import LanguageSwitcher from "./features/Debug/LanguageSwitcher.svelte";
 </script>
 
 <AppContainer>
   <Toolbar />
   <ThemeSwitcher />
+  <LanguageSwitcher />
   <ZoomConfig />
 </AppContainer>

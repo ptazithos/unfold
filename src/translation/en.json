@@ -2,6 +2,8 @@
     "debug":{
         "current_theme":"Current theme is {theme}",
         "switch_theme": "Switch theme",
-        "current_zoom_level": "Current Zoom level is {percent}%"
+        "current_zoom_level": "Current Zoom level is {percent}%",
+        "current_language": "Current language is {language}",
+        "switch_language": "Switch language"
     }
 }
