@@ -4,6 +4,8 @@
         "switch_theme": "Switch theme",
         "current_zoom_level": "Current Zoom level is {percent}%",
         "current_language": "Current language is {language}",
-        "switch_language": "Switch language"
+        "switch_language": "Switch language",
+        "current_menu_status": "Current menu is {shown} at {x},{y}",
+        "trigger_menu": "Trigger menu"
     }
 }
