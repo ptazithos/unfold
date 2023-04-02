@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { zoomLevel } from "../../../theme/store";
+  import { zoomLevel } from "../../../store/theme";
   import Button from "../../components/Button.svelte";
   import ConfigContainer from "./components/ConfigContainer.svelte";
   import { _ } from "svelte-i18n";

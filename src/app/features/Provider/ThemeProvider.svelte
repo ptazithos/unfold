@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { theme } from "../../../theme/store";
+  import { theme } from "../../../store/theme";
 </script>
 
 <div class={$theme}>
