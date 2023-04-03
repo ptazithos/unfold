@@ -5,7 +5,7 @@
   import ThemeSwitcher from "./features/Debug/ThemeSwitcher.svelte";
   import ZoomConfig from "./features/Debug/ZoomConfig.svelte";
   import LanguageSwitcher from "./features/Debug/LanguageSwitcher.svelte";
-  import MenuTweak from "./features/Debug/MenuTweak.svelte";
+  import MenuTweak from "./features/Debug/FloatTweak.svelte";
 </script>
 
 <AppContainer>
