@@ -1,12 +1,12 @@
 <script lang="ts">
   import ThemeProvider from "./ThemeProvider.svelte";
   import I18nProvider from "./I18nProvider.svelte";
-  import MenuProvider from "./MenuProvider.svelte";
+  import FloatContent from "./FloatContent.svelte";
 </script>
 
 <ThemeProvider>
   <I18nProvider>
-    <MenuProvider />
+    <FloatContent />
     <div class="h-screen bg-$background-1">
       <slot />
     </div>

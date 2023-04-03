@@ -1,6 +1,6 @@
 import { writable } from "svelte/store";
 
-interface IMenuConfig {
+interface IFloatContent {
   show: boolean;
   pos: {
     x: number;
@@ -9,7 +9,7 @@ interface IMenuConfig {
   content: any;
 }
 
-const DEFAULT_MENU: IMenuConfig = {
+const DEFAULT_FLOAT_CONTENT: IFloatContent = {
   show: false,
   pos: {
     x: 0,
@@ -18,4 +18,4 @@ const DEFAULT_MENU: IMenuConfig = {
   content: null,
 };
 
-export const menuConfig = writable(DEFAULT_MENU);
+export const menuConfig = writable(DEFAULT_FLOAT_CONTENT);

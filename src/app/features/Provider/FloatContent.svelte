@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { menuConfig } from "../../../store/menu";
+  import { menuConfig } from "../../../store/float";
 </script>
 
 {#if $menuConfig.show}
@@ -7,6 +7,6 @@
     class="absolute"
     style={`left:${$menuConfig.pos.x}rem; top: ${$menuConfig.pos.y}rem`}
   >
-    {$menuConfig.content}
+    <svelte:component this={$menuConfig.content} />
   </div>
 {/if}
