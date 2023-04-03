@@ -6,8 +6,8 @@
 
 <ThemeProvider>
   <I18nProvider>
-    <FloatContent />
     <div class="h-screen bg-$background-1 select-none">
+      <FloatContent />
       <slot />
     </div>
   </I18nProvider>
