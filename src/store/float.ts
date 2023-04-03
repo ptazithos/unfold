@@ -1,10 +1,16 @@
+import type { SvelteComponent } from "svelte";
 import { writable } from "svelte/store";
 
-export const shown = writable(false);
-export const position = writable({ x: 0, y: 0 });
-export const component = writable(null);
+interface Position {
+  x: number;
+  y: number;
+}
 
-export function show(pos: { x: number; y: number }, content: any) {
+export const shown = writable(false);
+export const position = writable<Position>({ x: 0, y: 0 });
+export const component = writable<typeof SvelteComponent | null>(null);
+
+export function show(pos: Position, content: typeof SvelteComponent) {
   shown.set(true);
   position.set(pos);
   component.set(content);
