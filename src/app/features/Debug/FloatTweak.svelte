@@ -5,7 +5,8 @@
   import { _ } from "svelte-i18n";
   import HelloWorld from "./components/HelloWorld.svelte";
 
-  const trigger = () => {
+  const trigger = (event) => {
+    event.stopPropagation();
     if ($shown) {
       hide();
     } else {
@@ -31,5 +32,5 @@
       },
     })}
   </div>
-  <Button content={$_({ id: "debug.trigger_menu" })} onClick={trigger} />
+  <Button content={$_({ id: "debug.trigger_menu" })} on:mousedown={trigger} />
 </ConfigContainer>

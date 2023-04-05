@@ -18,6 +18,6 @@
   </div>
   <Button
     content={$_({ id: "debug.switch_language" })}
-    onClick={switchLanguage}
+    on:click={switchLanguage}
   />
 </ConfigContainer>

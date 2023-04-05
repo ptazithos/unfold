@@ -15,5 +15,5 @@
 
 <ConfigContainer>
   <div>{$_({ id: "debug.current_theme", values: { theme: $theme } })}</div>
-  <Button content={$_({ id: "debug.switch_theme" })} onClick={changeTheme} />
+  <Button content={$_({ id: "debug.switch_theme" })} on:click={changeTheme} />
 </ConfigContainer>

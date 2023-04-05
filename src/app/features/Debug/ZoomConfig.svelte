@@ -17,6 +17,6 @@
   <div>
     {$_({ id: "debug.current_zoom_level", values: { percent: $zoomLevel } })}
   </div>
-  <Button content={"+"} onClick={zoomUp} />
-  <Button content={"-"} onClick={zoomDown} />
+  <Button content={"+"} on:click={zoomUp} />
+  <Button content={"-"} on:click={zoomDown} />
 </ConfigContainer>
