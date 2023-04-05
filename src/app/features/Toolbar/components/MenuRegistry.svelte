@@ -1,18 +1,8 @@
 <script lang="ts">
-  interface Item {
-    name: string;
-    action: () => void;
-  }
-
-  interface SubMenu {
-    name: string;
-    items: Item[];
-  }
-
-  interface RegistryConfig {
-    name: string;
-    items: (Item | SubMenu)[];
-  }
-
-  const REGISTRY_CONFIGS: RegistryConfig[] = [];
+  import type { RegistryConfig } from "../types";
+  export let config: RegistryConfig;
 </script>
+
+<div class="hover:bg-$highlight-1 hover:text-$font-highlight  px-1.5">
+  {config.name}
+</div>

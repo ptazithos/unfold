@@ -5,7 +5,8 @@
 
     --highlight-1: #4B494C;
 
-    --font-1: #CECECE;
+    --font-highlight: #EFEFEF;
+    --font-default: #9E9E9E ;
 
-    color: var(--font-1);
+    color: var(--font-default);
 }
