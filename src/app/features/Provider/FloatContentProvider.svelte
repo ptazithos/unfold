@@ -1,8 +1,11 @@
 <script lang="ts">
   import { shown, position, component, hide } from "../../../store/float";
+  const hideMenu = () => {
+    hide();
+  };
 </script>
 
-<div on:mousedown={hide} class="h-screen">
+<div on:mousedown={hideMenu} class="h-screen">
   {#if $shown}
     <div
       class="absolute"
