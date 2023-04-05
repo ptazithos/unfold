@@ -1,11 +1,17 @@
 {
-    "debug":{
-        "current_theme":"Current theme is {theme}",
+    "debug": {
+        "current_theme": "Current theme is {theme}",
         "switch_theme": "Switch theme",
         "current_zoom_level": "Current Zoom level is {percent}%",
         "current_language": "Current language is {language}",
         "switch_language": "Switch language",
         "current_menu_status": "Current menu is {shown} at {x},{y}",
         "trigger_menu": "Trigger menu"
+    },
+    "toolbar": {
+        "file": "File",
+        "edit": "Edit",
+        "view": "View",
+        "help": "Help"
     }
 }

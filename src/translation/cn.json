@@ -7,5 +7,11 @@
         "switch_language": "切换语言",
         "current_menu_status": "当前菜单位于: {x},{y} ({shown})",
         "trigger_menu": "切换菜单"
+    },
+    "toolbar": {
+        "file": "文件",
+        "edit": "编辑",
+        "view": "视图",
+        "help": "帮助"
     }
 }

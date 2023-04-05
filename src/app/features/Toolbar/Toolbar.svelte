@@ -1,21 +1,22 @@
 <script lang="ts">
   import type { RegistryConfig } from "./types";
   import MenuRegistry from "./components/MenuRegistry.svelte";
+
   const REGISTRY_CONFIGS: RegistryConfig[] = [
     {
-      name: "File",
+      name: "toolbar.file",
       items: [],
     },
     {
-      name: "Edit",
+      name: "toolbar.edit",
       items: [],
     },
     {
-      name: "View",
+      name: "toolbar.view",
       items: [],
     },
     {
-      name: "Help",
+      name: "toolbar.help",
       items: [],
     },
   ];

@@ -1,7 +1,9 @@
 <script lang="ts">
+  import { _ } from "svelte-i18n";
   import type { RegistryConfig } from "../types";
   import { shown, show, update, hide } from "../../../../store/float";
   import Menu from "./Menu.svelte";
+
   export let config: RegistryConfig;
 
   const triggerMenu = () => {
@@ -35,5 +37,5 @@
   on:mouseover={updateMenu}
   class="hover:bg-$highlight-1 hover:text-$font-highlight  px-1.5"
 >
-  {config.name}
+  {$_(config.name)}
 </button>
