@@ -16,6 +16,11 @@ export function show(pos: Position, content: typeof SvelteComponent) {
   component.set(content);
 }
 
+export function update(pos: Position, content: typeof SvelteComponent) {
+  position.set(pos);
+  component.set(content);
+}
+
 export function hide() {
   shown.set(false);
   position.set({ x: 0, y: 0 });
