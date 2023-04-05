@@ -1,14 +1,13 @@
 <script lang="ts">
   import ThemeProvider from "./ThemeProvider.svelte";
   import I18nProvider from "./I18nProvider.svelte";
-  import FloatContent from "./FloatContent.svelte";
+  import FloatContentProvider from "./FloatContentProvider.svelte";
 </script>
 
 <ThemeProvider>
   <I18nProvider>
-    <div class="h-screen bg-$background-1 select-none">
-      <FloatContent />
+    <FloatContentProvider>
       <slot />
-    </div>
+    </FloatContentProvider>
   </I18nProvider>
 </ThemeProvider>

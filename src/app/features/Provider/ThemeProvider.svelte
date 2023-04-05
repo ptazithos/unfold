@@ -3,5 +3,7 @@
 </script>
 
 <div class={$theme}>
-  <slot />
+  <div class="bg-$background-1 select-none">
+    <slot />
+  </div>
 </div>

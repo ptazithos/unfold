@@ -31,7 +31,7 @@
 
 <!-- svelte-ignore a11y-mouse-events-have-key-events -->
 <button
-  on:click={triggerMenu}
+  on:click|stopPropagation={triggerMenu}
   on:mouseover={updateMenu}
   class="hover:bg-$highlight-1 hover:text-$font-highlight  px-1.5"
 >
