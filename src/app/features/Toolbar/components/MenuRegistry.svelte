@@ -35,7 +35,7 @@
 <button
   on:mousedown|stopPropagation={triggerMenu}
   on:mouseover={updateMenu}
-  class="hover:bg-$highlight-1 hover:text-$font-highlight  px-1.5"
+  class="hover:bg-$highlight-1 hover:text-$font-highlight px-1.5"
 >
   {$_(config.name)}
 </button>
