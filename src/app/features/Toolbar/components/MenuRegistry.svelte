@@ -5,15 +5,25 @@
   import Menu from "./Menu.svelte";
 
   export let config: RegistryConfig;
+  let element;
+
+  const getCurrentPosition = () => {
+    const rect = (element as HTMLButtonElement).getBoundingClientRect();
+    return [rect.left, rect.bottom];
+  };
 
   const triggerMenu = () => {
     if ($shown) {
       hide();
     } else {
+      const rootFontSize = parseFloat(
+        getComputedStyle(document.documentElement).fontSize
+      );
+      console.log(rootFontSize);
       show(
         {
-          x: Math.round(Math.random() * 24),
-          y: Math.round(Math.random() * 24),
+          x: getCurrentPosition()[0] / rootFontSize,
+          y: getCurrentPosition()[1] / rootFontSize,
         },
         Menu
       );
@@ -21,10 +31,14 @@
   };
 
   const updateMenu = () => {
+    const rootFontSize = parseFloat(
+      getComputedStyle(document.documentElement).fontSize
+    );
+    console.log(rootFontSize);
     update(
       {
-        x: Math.round(Math.random() * 24),
-        y: Math.round(Math.random() * 24),
+        x: getCurrentPosition()[0] / rootFontSize,
+        y: getCurrentPosition()[1] / rootFontSize,
       },
       Menu
     );
@@ -35,6 +49,7 @@
 <button
   on:mousedown|stopPropagation={triggerMenu}
   on:mouseover={updateMenu}
+  bind:this={element}
   class="hover:bg-$highlight-1 hover:text-$font-highlight px-1.5"
 >
   {$_(config.name)}
