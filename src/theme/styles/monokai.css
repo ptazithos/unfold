@@ -2,8 +2,9 @@
 .monokai {
     --background-1: #222222;
     --background-2: #191919;
+    --background-3: #252525;
 
-    --highlight-1: #4B494C;
+    --highlight-1: #2E2E2E;
 
     --font-highlight: #EFEFEF;
     --font-default: #9E9E9E ;
