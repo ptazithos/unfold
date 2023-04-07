@@ -25,7 +25,8 @@
           x: getCurrentPosition()[0] / rootFontSize,
           y: getCurrentPosition()[1] / rootFontSize,
         },
-        Menu
+        Menu,
+        { items: config.items }
       );
     }
   };
@@ -40,7 +41,8 @@
         x: getCurrentPosition()[0] / rootFontSize,
         y: getCurrentPosition()[1] / rootFontSize,
       },
-      Menu
+      Menu,
+      { items: config.items }
     );
   };
 </script>

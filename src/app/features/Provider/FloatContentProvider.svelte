@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { shown, position, component, hide } from "../../../store/float";
+  import { shown, position, component, hide, args } from "../../../store/float";
   const hideMenu = () => {
     hide();
   };
@@ -11,7 +11,7 @@
       class="absolute"
       style={`left:${$position.x}rem; top: ${$position.y}rem`}
     >
-      <svelte:component this={$component} />
+      <svelte:component this={$component} {...$args} />
     </div>
   {/if}
   <slot />

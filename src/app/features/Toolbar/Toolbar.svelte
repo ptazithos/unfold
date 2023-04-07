@@ -5,7 +5,13 @@
   const REGISTRY_CONFIGS: RegistryConfig[] = [
     {
       name: "toolbar.file",
-      items: [],
+      items: [
+        { name: "Open file", action: () => {} },
+        { name: "Save", action: () => {} },
+        { name: "Save as json", action: () => {} },
+        { name: "Close", action: () => {} },
+        { name: "Preference", action: () => {} },
+      ],
     },
     {
       name: "toolbar.edit",
