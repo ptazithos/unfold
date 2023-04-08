@@ -1,37 +1,45 @@
 <script lang="ts">
-  import type { RegistryConfig } from "./types";
+  import { ItemType, type RegistryConfig } from "./types";
   import MenuRegistry from "./components/MenuRegistry.svelte";
 
   const REGISTRY_CONFIGS: RegistryConfig[] = [
     {
       name: "toolbar.file",
       items: [
-        { name: "menu.file.open_file", action: () => {} },
-        { name: "separator" },
-        { name: "menu.file.save", action: () => {} },
-        { name: "menu.file.save_as_json", action: () => {} },
-        { name: "separator" },
-        { name: "menu.file.close", action: () => {} },
-        { name: "menu.file.preference", action: () => {} },
+        { type: ItemType.Item, name: "menu.file.open_file", action: () => {} },
+        { type: ItemType.Separator },
+        { type: ItemType.Item, name: "menu.file.save", action: () => {} },
+        {
+          type: ItemType.Item,
+          name: "menu.file.save_as_json",
+          action: () => {},
+        },
+        { type: ItemType.Separator },
+        { type: ItemType.Item, name: "menu.file.close", action: () => {} },
+        { type: ItemType.Item, name: "menu.file.preference", action: () => {} },
       ],
     },
     {
       name: "toolbar.edit",
       items: [
-        { name: "menu.edit.undo", action: () => {} },
-        { name: "separator" },
-        { name: "menu.edit.cut", action: () => {} },
-        { name: "menu.edit.copy", action: () => {} },
-        { name: "menu.edit.paste", action: () => {} },
+        { type: ItemType.Item, name: "menu.edit.undo", action: () => {} },
+        { type: ItemType.Separator },
+        { type: ItemType.Item, name: "menu.edit.cut", action: () => {} },
+        { type: ItemType.Item, name: "menu.edit.copy", action: () => {} },
+        { type: ItemType.Item, name: "menu.edit.paste", action: () => {} },
       ],
     },
     {
       name: "toolbar.view",
-      items: [{ name: "menu.view.output", action: () => {} }],
+      items: [
+        { type: ItemType.Item, name: "menu.view.output", action: () => {} },
+      ],
     },
     {
       name: "toolbar.help",
-      items: [{ name: "menu.help.about", action: () => {} }],
+      items: [
+        { type: ItemType.Item, name: "menu.help.about", action: () => {} },
+      ],
     },
   ];
 </script>
