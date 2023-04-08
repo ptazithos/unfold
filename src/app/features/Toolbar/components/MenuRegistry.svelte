@@ -32,7 +32,6 @@
   };
 
   const updateMenu = () => {
-    console.log(rootFontSize);
     update(
       {
         x: getCurrentPosition()[0] / rootFontSize(),
