@@ -15,15 +15,20 @@
     },
     {
       name: "toolbar.edit",
-      items: [],
+      items: [
+        { name: "menu.edit.undo", action: () => {} },
+        { name: "menu.edit.cut", action: () => {} },
+        { name: "menu.edit.copy", action: () => {} },
+        { name: "menu.edit.paste", action: () => {} },
+      ],
     },
     {
       name: "toolbar.view",
-      items: [],
+      items: [{ name: "menu.view.output", action: () => {} }],
     },
     {
       name: "toolbar.help",
-      items: [],
+      items: [{ name: "menu.help.about", action: () => {} }],
     },
   ];
 </script>
