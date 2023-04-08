@@ -12,18 +12,18 @@
     return [rect.left, rect.bottom];
   };
 
+  const rootFontSize = () => {
+    return parseFloat(getComputedStyle(document.documentElement).fontSize);
+  };
+
   const triggerMenu = () => {
     if ($shown) {
       hide();
     } else {
-      const rootFontSize = parseFloat(
-        getComputedStyle(document.documentElement).fontSize
-      );
-      console.log(rootFontSize);
       show(
         {
-          x: getCurrentPosition()[0] / rootFontSize,
-          y: getCurrentPosition()[1] / rootFontSize,
+          x: getCurrentPosition()[0] / rootFontSize(),
+          y: getCurrentPosition()[1] / rootFontSize(),
         },
         Menu,
         { items: config.items }
@@ -32,14 +32,11 @@
   };
 
   const updateMenu = () => {
-    const rootFontSize = parseFloat(
-      getComputedStyle(document.documentElement).fontSize
-    );
     console.log(rootFontSize);
     update(
       {
-        x: getCurrentPosition()[0] / rootFontSize,
-        y: getCurrentPosition()[1] / rootFontSize,
+        x: getCurrentPosition()[0] / rootFontSize(),
+        y: getCurrentPosition()[1] / rootFontSize(),
       },
       Menu,
       { items: config.items }
