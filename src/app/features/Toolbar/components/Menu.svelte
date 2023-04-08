@@ -7,10 +7,27 @@
   export let items: (Item | SubMenu | Separator)[];
   let parent: HTMLElement;
   let rect = { width: 0 };
+  let shouldSubMenuShowOff = new Array(items.length).fill(false);
 
   onMount(() => {
     rect.width = parent.getBoundingClientRect().width;
   });
+
+  const onHover = (index: number) => {
+    clearTimeout(handler);
+    shouldSubMenuShowOff[index] = true;
+  };
+
+  let handler;
+  const onLeave = (index: number) => {
+    handler = setTimeout(() => {
+      shouldSubMenuShowOff[index] = false;
+    }, 100);
+  };
+
+  const onSubMenuFocus = (index: number) => {
+    clearTimeout(handler);
+  };
 </script>
 
 <div class="bg-$background-1 border-$border-1 border-2" bind:this={parent}>
@@ -23,12 +40,33 @@
       </div>
     {:else if item.type === ItemType.SubMenu}
       <div class="relative">
-        <div class=" hover:bg-$highlight-1 px-6 text-$font-highlight">
+        <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+        <div
+          class=" hover:bg-$highlight-1 px-6 text-$font-highlight"
+          on:mouseover={() => {
+            onHover(i);
+          }}
+          on:mouseleave={() => {
+            onLeave(i);
+          }}
+        >
           {$_(item.name)}
         </div>
-        <div class="absolute top-0" style={`left:${rect.width}px;`}>
-          <svelte:self items={item.items} />
-        </div>
+        {#if shouldSubMenuShowOff[i]}
+          <!-- svelte-ignore a11y-mouse-events-have-key-events -->
+          <div
+            class="absolute top-0"
+            style={`left:${rect.width}px;`}
+            on:mouseover={() => {
+              onSubMenuFocus(i);
+            }}
+            on:mouseleave={() => {
+              onLeave(i);
+            }}
+          >
+            <svelte:self items={item.items} />
+          </div>
+        {/if}
       </div>
     {/if}
   {/each}
