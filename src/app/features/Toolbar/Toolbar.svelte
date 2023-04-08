@@ -21,7 +21,6 @@
           items: [
             { type: ItemType.Item, name: "Settings", action: () => {} },
             { type: ItemType.Item, name: "Appearance", action: () => {} },
-            { type: ItemType.Item, name: "Theme", action: () => {} },
           ],
         },
         { type: ItemType.Item, name: "menu.file.close", action: () => {} },
