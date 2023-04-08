@@ -27,8 +27,8 @@
       id: "debug.current_menu_status",
       values: {
         shown: $shown ? "shown" : "hide",
-        x: $position.x,
-        y: $position.y,
+        x: $position.x.toFixed(1),
+        y: $position.y.toFixed(1),
       },
     })}
   </div>
