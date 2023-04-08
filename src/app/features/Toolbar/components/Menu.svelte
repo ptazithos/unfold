@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { afterUpdate } from "svelte";
   import type { Item, Separator, SubMenu } from "../types";
   import { ItemType } from "../types";
   import { _ } from "svelte-i18n";
@@ -9,8 +9,9 @@
   let rect = { width: 0 };
   let shouldSubMenuShowOff = new Array(items.length).fill(false);
 
-  onMount(() => {
-    rect.width = parent.getBoundingClientRect().width;
+  afterUpdate(() => {
+    const menuWidth = parent.getBoundingClientRect().width;
+    if (rect.width != menuWidth) rect.width = menuWidth;
   });
 
   const onHover = (index: number) => {
