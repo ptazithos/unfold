@@ -7,8 +7,10 @@
       name: "toolbar.file",
       items: [
         { name: "menu.file.open_file", action: () => {} },
+        { name: "separator" },
         { name: "menu.file.save", action: () => {} },
         { name: "menu.file.save_as_json", action: () => {} },
+        { name: "separator" },
         { name: "menu.file.close", action: () => {} },
         { name: "menu.file.preference", action: () => {} },
       ],
@@ -17,6 +19,7 @@
       name: "toolbar.edit",
       items: [
         { name: "menu.edit.undo", action: () => {} },
+        { name: "separator" },
         { name: "menu.edit.cut", action: () => {} },
         { name: "menu.edit.copy", action: () => {} },
         { name: "menu.edit.paste", action: () => {} },

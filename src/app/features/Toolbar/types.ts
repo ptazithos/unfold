@@ -8,7 +8,11 @@ export interface SubMenu {
   items: Item[];
 }
 
+export interface Separator {
+  name: "separator";
+}
+
 export interface RegistryConfig {
   name: string;
-  items: (Item | SubMenu)[];
+  items: (Item | SubMenu | Separator)[];
 }
