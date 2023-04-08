@@ -13,5 +13,14 @@
         "edit": "编辑",
         "view": "视图",
         "help": "帮助"
+    },
+    "menu":{
+        "file":{
+            "open_file": "打开文件",
+            "save":"保存",
+            "save_as_json":"保存为JSON",
+            "close": "关闭",
+            "preference":"偏好设置"
+        }
     }
 }

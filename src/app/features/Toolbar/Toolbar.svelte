@@ -6,11 +6,11 @@
     {
       name: "toolbar.file",
       items: [
-        { name: "Open file", action: () => {} },
-        { name: "Save", action: () => {} },
-        { name: "Save as json", action: () => {} },
-        { name: "Close", action: () => {} },
-        { name: "Preference", action: () => {} },
+        { name: "menu.file.open_file", action: () => {} },
+        { name: "menu.file.save", action: () => {} },
+        { name: "menu.file.save_as_json", action: () => {} },
+        { name: "menu.file.close", action: () => {} },
+        { name: "menu.file.preference", action: () => {} },
       ],
     },
     {

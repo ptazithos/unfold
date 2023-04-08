@@ -13,5 +13,14 @@
         "edit": "Edit",
         "view": "View",
         "help": "Help"
+    },
+    "menu":{
+        "file":{
+            "open_file": "Open file",
+            "save":"Save",
+            "save_as_json":"Save as JSON",
+            "close": "Close",
+            "preference":"Preference"
+        }
     }
 }
