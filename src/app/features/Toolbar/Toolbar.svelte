@@ -15,8 +15,16 @@
           action: () => {},
         },
         { type: ItemType.Separator },
+        {
+          type: ItemType.SubMenu,
+          name: "menu.file.preference",
+          items: [
+            { type: ItemType.Item, name: "Settings", action: () => {} },
+            { type: ItemType.Item, name: "Appearance", action: () => {} },
+            { type: ItemType.Item, name: "Theme", action: () => {} },
+          ],
+        },
         { type: ItemType.Item, name: "menu.file.close", action: () => {} },
-        { type: ItemType.Item, name: "menu.file.preference", action: () => {} },
       ],
     },
     {
