@@ -36,7 +36,10 @@
     {#if item.type === ItemType.Separator}
       <div class="border-$separator-1 border-1 my-1.5" />
     {:else if item.type === ItemType.Item}
-      <div class=" hover:bg-$highlight-1 px-6 text-$font-highlight">
+      <div
+        class=" hover:bg-$highlight-1 px-6 text-$font-highlight"
+        on:mousedown={item.action}
+      >
         {$_(item.name)}
       </div>
     {:else if item.type === ItemType.SubMenu}
