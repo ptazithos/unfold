@@ -37,7 +37,7 @@
       <div class="border-$separator-1 border-1 my-1.5" />
     {:else if item.type === ItemType.Item}
       <div
-        class=" hover:bg-$highlight-1 px-6 text-$font-highlight"
+        class=" hover:bg-$highlight-1 px-6 text-$font-highlight whitespace-nowrap"
         on:mousedown={item.action}
       >
         {$_(item.name)}

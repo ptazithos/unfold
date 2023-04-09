@@ -20,7 +20,11 @@
       "save": "保存",
       "save_as_json": "保存为JSON",
       "close": "关闭",
-      "preference": "偏好设置"
+      "preference": "偏好设置",
+      "sub": {
+        "setting": "通用",
+        "appearance": "外观"
+      }
     },
     "edit": {
       "undo": "撤销",

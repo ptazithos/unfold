@@ -20,7 +20,11 @@
       "save": "Save",
       "save_as_json": "Save as JSON",
       "close": "Close",
-      "preference": "Preference"
+      "preference": "Preference",
+      "sub": {
+        "setting": "Setting",
+        "appearance": "Appearance"
+      }
     },
     "edit": {
       "undo": "Undo",

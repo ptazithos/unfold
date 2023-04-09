@@ -16,8 +16,16 @@ export const FILE_CONFIG: RegistryConfig = {
       type: ItemType.SubMenu,
       name: "menu.file.preference",
       items: [
-        { type: ItemType.Item, name: "Settings", action: () => {} },
-        { type: ItemType.Item, name: "Appearance", action: () => {} },
+        {
+          type: ItemType.Item,
+          name: "menu.file.sub.setting",
+          action: () => {},
+        },
+        {
+          type: ItemType.Item,
+          name: "menu.file.sub.appearance",
+          action: () => {},
+        },
       ],
     },
     { type: ItemType.Item, name: "menu.file.close", action: () => {} },
