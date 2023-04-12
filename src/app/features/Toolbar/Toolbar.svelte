@@ -1,11 +1,14 @@
 <script lang="ts">
+  import { getContext } from "svelte";
   import { ItemType, type RegistryConfig } from "./types";
   import MenuRegistry from "./components/MenuRegistry.svelte";
-  import { FILE_CONFIG } from "./configs/file";
+  import { fileConfig } from "./configs/file";
   import { EDIT_CONFIG } from "./configs/edit";
 
+  const api = getContext("native_api");
+
   const REGISTRY_CONFIGS: RegistryConfig[] = [
-    FILE_CONFIG,
+    fileConfig(api),
     EDIT_CONFIG,
     {
       name: "toolbar.view",

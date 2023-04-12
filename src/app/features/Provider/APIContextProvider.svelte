@@ -1,14 +1,30 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import { open } from "@tauri-apps/api/dialog";
+
+  const env = !!window.__TAURI__ ? "TAURI" : "WEB";
 
   setContext("native_api", {});
 
-  if (!!window.__TAURI__) {
-    // code is running in tauri environment
-    console.log("Tauri environment detected");
-  } else {
-    // code may be running in a browser
-    console.log("Browser environment detected");
+  switch (env) {
+    case "TAURI": {
+      setContext("native_api", {
+        openFile: async () => {
+          const selected = await open({
+            multiple: false,
+          });
+
+          console.log(selected);
+        },
+      });
+      break;
+    }
+    case "WEB": {
+      setContext("native_api", {
+        openFile: () => {},
+      });
+      break;
+    }
   }
 </script>
 
