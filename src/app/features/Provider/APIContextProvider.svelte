@@ -21,7 +21,17 @@
     }
     case "WEB": {
       setContext("native_api", {
-        openFile: () => {},
+        openFile: () => {
+          const input =
+            (document.getElementById("input") as HTMLInputElement) ??
+            document.createElement("input");
+          input.id = "input";
+          input.style.display = "none";
+          input.type = "file";
+          input.name = "file";
+          document.getElementById("app").appendChild(input);
+          input.click();
+        },
       });
       break;
     }
