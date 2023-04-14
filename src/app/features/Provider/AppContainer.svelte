@@ -2,7 +2,7 @@
   import ThemeProvider from "./ThemeProvider.svelte";
   import I18nProvider from "./I18nProvider.svelte";
   import FloatContentProvider from "./FloatContentProvider.svelte";
-  import ApiContextProvider from "./APIContextProvider.svelte";
+  import ApiContextProvider from "./APIProvider/index.svelte";
 </script>
 
 <ApiContextProvider>
