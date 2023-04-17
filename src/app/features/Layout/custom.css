@@ -1,31 +1,42 @@
 .splitpanes__splitter {
-    position: relative;
-  }
+  position: relative;
+}
 
-  .splitpanes--vertical > .splitpanes__splitter::before {
-    content: "";
-    position: absolute;
-    cursor: col-resize;
-    height: 100%;
-    left: -3px;
-    right: -3px;
-    z-index: 1;
-  }
+.splitpanes__splitter::before {
+  background-color: var(--border-selected);
+  transition: opacity 0.5s;
+  opacity: 0;
+}
 
-  .splitpanes--horizontal > .splitpanes__splitter::before {
-    content: "";
-    position: absolute;
-    cursor: row-resize;
-    width: 100%;
-    top: -3px;
-    bottom: -3px;
-    z-index: 1;
-  }
+.splitpanes__splitter:active::before,
+.splitpanes__splitter:hover::before {
+  opacity: 1;
+}
 
-  .splitpanes__pane.sidebar {
-    background-color: var(--background-2);
-  }
+.splitpanes--vertical > .splitpanes__splitter::before {
+  content: "";
+  position: absolute;
+  cursor: col-resize;
+  height: 100%;
+  left: -2px;
+  right: -2px;
+  z-index: 1;
+}
 
-  .splitpanes__pane.bottom {
-    background-color: var(--background-3);
-  }
+.splitpanes--horizontal > .splitpanes__splitter::before {
+  content: "";
+  position: absolute;
+  cursor: row-resize;
+  width: 100%;
+  top: -2px;
+  bottom: -2px;
+  z-index: 1;
+}
+
+.splitpanes__pane.sidebar {
+  background-color: var(--background-2);
+}
+
+.splitpanes__pane.bottom {
+  background-color: var(--background-3);
+}

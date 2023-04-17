@@ -1,2 +1,7 @@
 @import "theme/styles/theme.css";
 @import "app/features/Layout/custom.css";
+
+* {
+    color: var(--font-default);
+}
+  

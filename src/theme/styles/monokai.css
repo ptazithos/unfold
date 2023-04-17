@@ -5,6 +5,7 @@
     --background-3: #363636;
 
     --border-1: #191919;
+    --border-selected: #525252;
 
     --separator-1: #2E2E2E;
 
@@ -12,6 +13,4 @@
 
     --font-highlight: #EFEFEF;
     --font-default: #9E9E9E ;
-
-    color: var(--font-default);
 }
