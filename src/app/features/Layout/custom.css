@@ -1,0 +1,31 @@
+.splitpanes__splitter {
+    position: relative;
+  }
+
+  .splitpanes--vertical > .splitpanes__splitter::before {
+    content: "";
+    position: absolute;
+    cursor: col-resize;
+    height: 100%;
+    left: -3px;
+    right: -3px;
+    z-index: 1;
+  }
+
+  .splitpanes--horizontal > .splitpanes__splitter::before {
+    content: "";
+    position: absolute;
+    cursor: row-resize;
+    width: 100%;
+    top: -3px;
+    bottom: -3px;
+    z-index: 1;
+  }
+
+  .splitpanes__pane.sidebar {
+    background-color: var(--background-2);
+  }
+
+  .splitpanes__pane.bottom {
+    background-color: var(--background-3);
+  }

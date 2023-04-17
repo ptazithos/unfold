@@ -1,6 +1,6 @@
 import App from "./app/App.svelte";
 import "virtual:windi.css";
-import "./theme/styles/theme.css";
+import "./global.css";
 
 const app = new App({
   target: document.getElementById("app"),
