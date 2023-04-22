@@ -10,20 +10,24 @@ export const theme = persistable("theme", ThemeName.MONOKAI)[0];
 const DEFAULT_FONT_SIZE = 16;
 
 function createZoomLevel() {
-  const { subscribe, set } = persistable("zoomLevel", 100)[0];
+  const [{ subscribe, set }, level] = persistable("zoomLevel", 100);
+
   const setREM = (fontSize: string) => {
     const root = document.querySelector<HTMLElement>(":root");
     root.style.fontSize = fontSize;
   };
 
+  const zoom = (percent) => {
+    set(percent);
+    const calculatedSize = (DEFAULT_FONT_SIZE * percent) / 100;
+    setREM(calculatedSize + "px");
+  };
+
+  zoom(level);
+
   return {
     subscribe,
-    zoom: (percent) => {
-      const calculatedSize = (DEFAULT_FONT_SIZE * percent) / 100;
-      set(percent);
-
-      setREM(calculatedSize + "px");
-    },
+    zoom,
     reset: () => {
       set(100);
 
