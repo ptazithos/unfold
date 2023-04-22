@@ -1,4 +1,12 @@
-export function initAPI() {}
+import { mergeContext } from "../utils";
+
+export async function initAPI() {}
+
+export function registerAPI() {
+  mergeContext("native_api", {
+    openFile: openFile,
+  });
+}
 
 function retrieveInputElement(): HTMLInputElement {
   const possibleElement = document.getElementById("exclusive_input");

@@ -1,12 +1,38 @@
 <script lang="ts">
+  import { onMount } from "svelte";
   import BROWSER from "./api/browser/index";
   import TAURI from "./api/tauri/index";
+  import { info } from "tauri-plugin-log-api";
 
-  const API = !!window.__TAURI__ ? TAURI : BROWSER;
+  const APIModule = !!window.__TAURI__ ? TAURI : BROWSER;
+  const APIs = Object.entries(APIModule);
+  let isReady = false;
 
-  for (const [name, api] of Object.entries({ ...API })) {
-    api.initAPI();
+  const APIPromises = APIs.map(([name, api]) => {
+    console.info(name);
+    return api.initAPI();
+  });
+
+  onMount(() => {
+    Promise.all(APIPromises)
+      .then(() => {
+        info("loaded");
+        isReady = true;
+      })
+      .catch((err) => {
+        info(JSON.stringify("err1"));
+      });
+  });
+
+  $: {
+    if (isReady === true) {
+      APIs.map(([name, api]) => {
+        api.registerAPI();
+      });
+    }
   }
 </script>
 
-<slot />
+{#if isReady}
+  <slot />
+{/if}

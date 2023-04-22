@@ -1,1 +1,2 @@
-export function initAPI() {}
+export async function initAPI() {}
+export function registerAPI() {}

@@ -1,7 +1,9 @@
 import { open } from "@tauri-apps/api/dialog";
 import { mergeContext } from "../utils";
 
-export function initAPI() {
+export async function initAPI() {}
+
+export function registerAPI() {
   mergeContext("native_api", {
     openFile: openFile,
   });
