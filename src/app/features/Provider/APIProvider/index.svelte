@@ -9,7 +9,6 @@
   let isReady = false;
 
   const APIPromises = APIs.map(([name, api]) => {
-    console.info(name);
     return api.initAPI();
   });
 
@@ -18,9 +17,7 @@
       .then(() => {
         isReady = true;
       })
-      .catch((err) => {
-        info(JSON.stringify("err1"));
-      });
+      .catch((err) => {});
   });
 
   $: {
