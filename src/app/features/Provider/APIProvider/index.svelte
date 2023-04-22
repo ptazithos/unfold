@@ -16,7 +16,6 @@
   onMount(() => {
     Promise.all(APIPromises)
       .then(() => {
-        info("loaded");
         isReady = true;
       })
       .catch((err) => {
