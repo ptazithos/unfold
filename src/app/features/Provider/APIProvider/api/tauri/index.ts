@@ -1,5 +1,5 @@
-import * as Dialog from "./dialog";
 import * as Log from "./log";
+import * as Dialog from "./dialog";
 
 export default {
   Log,

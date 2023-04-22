@@ -7,9 +7,9 @@
 
   const API = !!window.__TAURI__ ? TAURI : BROWSER;
 
-  for (const [name, api] of Object.entries(API)) {
-    log.debug(`API Module ${name} init`);
+  for (const [name, api] of Object.entries({ ...API })) {
     api.initAPI();
+    log.debug(`API Module ${name} init`);
   }
 
   setContext("native_api", {
