@@ -8,7 +8,7 @@
   <Pane>
     <Splitpanes horizontal={true} theme="any">
       <Pane><slot name="main" /></Pane>
-      <Pane size={20} class="bottom"><slot name="bottom" /></Pane>
+      <Pane size={30} class="bottom"><slot name="bottom" /></Pane>
     </Splitpanes>
   </Pane>
 </Splitpanes>
