@@ -5,7 +5,7 @@ export default function persistable<T>(
   fallback: T,
   deserialize: (item: string) => T = JSON.parse,
   serialize: (value: T) => string = JSON.stringify
-) {
+): [Writable<T>, T] {
   const persistValue = deserialize(localStorage.getItem(key));
   const store = writable<T>(persistValue ?? fallback);
 
@@ -13,5 +13,5 @@ export default function persistable<T>(
     localStorage.setItem(key, serialize(value));
   });
 
-  return store;
+  return [store, persistValue];
 }

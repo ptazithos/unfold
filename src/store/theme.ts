@@ -1,4 +1,3 @@
-import { writable } from "svelte/store";
 import persistable from "./utils/persistable";
 
 export enum ThemeName {
@@ -6,12 +5,12 @@ export enum ThemeName {
   DEFAULT = "default",
 }
 
-export const theme = persistable("theme", ThemeName.MONOKAI);
+export const theme = persistable("theme", ThemeName.MONOKAI)[0];
 
 const DEFAULT_FONT_SIZE = 16;
 
 function createZoomLevel() {
-  const { subscribe, set } = persistable("zoomLevel", 100);
+  const { subscribe, set } = persistable("zoomLevel", 100)[0];
   const setREM = (fontSize: string) => {
     const root = document.querySelector<HTMLElement>(":root");
     root.style.fontSize = fontSize;
