@@ -1,3 +1,5 @@
+export function initAPI() {}
+
 function retrieveInputElement(): HTMLInputElement {
   const possibleElement = document.getElementById("exclusive_input");
   if (possibleElement) {

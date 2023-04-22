@@ -1,27 +1,20 @@
 <script lang="ts">
   import { setContext } from "svelte";
+  import log from "loglevel";
 
-  import * as BROWSER from "./api/browser";
-  import * as TAURI from "./api/tauri";
+  import BROWSER from "./api/browser/index";
+  import TAURI from "./api/tauri/index";
 
-  const env = !!window.__TAURI__ ? "TAURI" : "WEB";
+  const API = !!window.__TAURI__ ? TAURI : BROWSER;
 
-  setContext("native_api", {});
-
-  switch (env) {
-    case "TAURI": {
-      setContext("native_api", {
-        openFile: TAURI.openFile,
-      });
-      break;
-    }
-    case "WEB": {
-      setContext("native_api", {
-        openFile: BROWSER.openFile,
-      });
-      break;
-    }
+  for (const [name, api] of Object.entries(API)) {
+    log.debug(`API Module ${name} init`);
+    api.initAPI();
   }
+
+  setContext("native_api", {
+    openFile: API.Dialog.openFile,
+  });
 </script>
 
 <slot />
