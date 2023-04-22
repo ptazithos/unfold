@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
+    "loglevel": "^1.8.1",
     "svelte-i18n": "^3.6.0",
     "svelte-splitpanes": "^0.7.13"
   },
