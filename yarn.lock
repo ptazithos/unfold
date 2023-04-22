@@ -967,6 +967,12 @@ svelte@^3.54.0:
   resolved "https://registry.yarnpkg.com/svelte/-/svelte-3.57.0.tgz#a3969cfe51f25f2a55e75f7b98dbd02c3af0980b"
   integrity sha512-WMXEvF+RtAaclw0t3bPDTUe19pplMlfyKDsixbHQYgCWi9+O9VN0kXU1OppzrB9gPAvz4NALuoca2LfW2bOjTQ==
 
+"tauri-plugin-log-api@https://github.com/tauri-apps/tauri-plugin-log":
+  version "0.0.0"
+  resolved "https://github.com/tauri-apps/tauri-plugin-log#36100c269e33ac91246b0a4bfadd18c1caee5296"
+  dependencies:
+    "@tauri-apps/api" "^1.2.0"
+
 timers-ext@^0.1.7:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/timers-ext/-/timers-ext-0.1.7.tgz#6f57ad8578e07a3fb9f91d9387d65647555e25c6"

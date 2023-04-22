@@ -12,9 +12,9 @@
   },
   "dependencies": {
     "@tauri-apps/api": "^1.2.0",
-    "loglevel": "^1.8.1",
     "svelte-i18n": "^3.6.0",
-    "svelte-splitpanes": "^0.7.13"
+    "svelte-splitpanes": "^0.7.13",
+    "tauri-plugin-log-api": "https://github.com/tauri-apps/tauri-plugin-log"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^2.0.0",

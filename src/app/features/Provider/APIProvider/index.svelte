@@ -1,7 +1,4 @@
 <script lang="ts">
-  import { setContext } from "svelte";
-  import log from "loglevel";
-
   import BROWSER from "./api/browser/index";
   import TAURI from "./api/tauri/index";
 
@@ -9,12 +6,7 @@
 
   for (const [name, api] of Object.entries({ ...API })) {
     api.initAPI();
-    log.debug(`API Module ${name} init`);
   }
-
-  setContext("native_api", {
-    openFile: API.Dialog.openFile,
-  });
 </script>
 
 <slot />
