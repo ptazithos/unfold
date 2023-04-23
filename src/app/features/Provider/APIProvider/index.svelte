@@ -12,9 +12,7 @@
 
   Promise.all(APIPromises)
     .then(() => {
-      setTimeout(() => {
-        status.doLoad("api");
-      }, 1000);
+      status.doLoad("api");
     })
     .catch((err) => {});
 
