@@ -1,27 +1,23 @@
 <script lang="ts">
-  import { onMount } from "svelte";
+  import { status } from "../../../../store/pretask";
   import BROWSER from "./api/browser/index";
   import TAURI from "./api/tauri/index";
-  import { info } from "tauri-plugin-log-api";
 
   const APIModule = !!window.__TAURI__ ? TAURI : BROWSER;
   const APIs = Object.entries(APIModule);
-  let isReady = false;
 
   const APIPromises = APIs.map(([name, api]) => {
     return api.initAPI();
   });
 
-  onMount(() => {
-    Promise.all(APIPromises)
-      .then(() => {
-        isReady = true;
-      })
-      .catch((err) => {});
-  });
+  Promise.all(APIPromises)
+    .then(() => {
+      status.doLoad("api");
+    })
+    .catch((err) => {});
 
   $: {
-    if (isReady === true) {
+    if ($status === true) {
       APIs.map(([name, api]) => {
         api.registerAPI();
       });
@@ -29,6 +25,6 @@
   }
 </script>
 
-{#if isReady}
+{#if $status}
   <slot />
 {/if}
