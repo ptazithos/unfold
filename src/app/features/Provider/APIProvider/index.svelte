@@ -12,7 +12,9 @@
 
   Promise.all(APIPromises)
     .then(() => {
-      status.doLoad("api");
+      setTimeout(() => {
+        status.doLoad("api");
+      }, 1000);
     })
     .catch((err) => {});
 
@@ -25,6 +27,4 @@
   }
 </script>
 
-{#if $status}
-  <slot />
-{/if}
+<slot />
