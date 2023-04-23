@@ -1,12 +1,9 @@
 import persistable from "./utils/persistable";
-import { addMessages, locale, init, _ as t } from "svelte-i18n";
-
-import en from "../translation/en.json";
-import cn from "../translation/cn.json";
+import { locale, init, _ as t, register } from "svelte-i18n";
 
 function createLanguage() {
-  addMessages("en", en);
-  addMessages("cn", cn);
+  register("en", () => import("../translation/en.json"));
+  register("cn", () => import("../translation/cn.json"));
 
   const [{ subscribe, set }, persistLanguage] = persistable("language", "en");
 

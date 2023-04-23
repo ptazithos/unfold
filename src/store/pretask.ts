@@ -1,7 +1,7 @@
 import { derived, writable } from "svelte/store";
 
 function createPretaskStatus() {
-  const store = writable({ api: false });
+  const store = writable({ api: false, language: false });
   const status = derived(store, ($store) => {
     return Object.values($store).reduce((prev, cur) => {
       return prev && cur;

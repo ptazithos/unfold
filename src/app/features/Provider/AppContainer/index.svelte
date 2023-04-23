@@ -12,9 +12,10 @@
   <ThemeProvider>
     <I18nProvider>
       <FloatContentProvider>
-        {#if !$status}<Loading />{/if}
-
-        <slot />
+        {#if !$status}<Loading />
+        {:else}
+          <slot />
+        {/if}
       </FloatContentProvider>
     </I18nProvider>
   </ThemeProvider>
