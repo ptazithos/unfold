@@ -2,6 +2,7 @@
   import { status } from "../../../../store/pretask";
   import BROWSER from "./api/browser/index";
   import TAURI from "./api/tauri/index";
+  import SplashScreen from "./components/SplashScreen.svelte";
 
   const APIModule = !!window.__TAURI__ ? TAURI : BROWSER;
   const APIs = Object.entries(APIModule);
@@ -27,4 +28,4 @@
   }
 </script>
 
-<slot />
+{#if $status} <slot />{:else}<SplashScreen />{/if}
