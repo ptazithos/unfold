@@ -8,15 +8,15 @@
   import { status } from "unfold/store/pretask";
 </script>
 
-<ApiContextProvider>
-  <ThemeProvider>
-    <I18nProvider>
-      <FloatContentProvider>
-        {#if !$status}<SplashScreen />
-        {:else}
+<ThemeProvider>
+  <I18nProvider>
+    <ApiContextProvider>
+      {#if !$status}<SplashScreen />
+      {:else}
+        <FloatContentProvider>
           <slot />
-        {/if}
-      </FloatContentProvider>
-    </I18nProvider>
-  </ThemeProvider>
-</ApiContextProvider>
+        </FloatContentProvider>
+      {/if}
+    </ApiContextProvider>
+  </I18nProvider>
+</ThemeProvider>
