@@ -1,6 +1,6 @@
 <script lang="ts">
   import { Pane, Splitpanes } from "svelte-splitpanes";
-  import Shadow from "./components/shadow.svelte";
+  import Shadow from "../../components/Shadow.svelte";
 </script>
 
 <div class="h-full relative">
