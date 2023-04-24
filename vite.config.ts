@@ -1,10 +1,14 @@
+import * as path from "path";
 import { defineConfig } from "vite";
 import { svelte } from "@sveltejs/vite-plugin-svelte";
 import sveltePreprocess from "svelte-preprocess";
-import windiCSS from 'vite-plugin-windicss'
+import windiCSS from "vite-plugin-windicss";
 
 // https://vitejs.dev/config/
 export default defineConfig(async () => ({
+  resolve: {
+    alias: [{ find: "unfold", replacement: path.resolve(__dirname, "src") }],
+  },
   plugins: [
     svelte({
       preprocess: [
