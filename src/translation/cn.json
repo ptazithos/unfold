@@ -37,6 +37,9 @@
     },
     "help": {
       "about": "关于"
+    },
+    "landing": {
+      "annotation": "\"从打开AoE2Scenario文件开始\""
     }
   }
 }

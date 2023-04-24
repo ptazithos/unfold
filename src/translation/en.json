@@ -38,5 +38,8 @@
     "help": {
       "about": "About"
     }
+  },
+  "landing": {
+    "annotation": "\"Start with opening AoE2Scenario file\""
   }
 }

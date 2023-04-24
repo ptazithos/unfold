@@ -8,7 +8,7 @@
 <div on:mousedown={hideMenu} class="h-screen">
   {#if $shown}
     <div
-      class="absolute"
+      class="absolute z-1"
       style={`left:${$position.x}rem; top: ${$position.y}rem`}
     >
       <svelte:component this={$component} {...$args} />
