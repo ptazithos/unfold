@@ -1,5 +1,6 @@
 import App from "./app/App.svelte";
-import "virtual:windi.css";
+import "@unocss/reset/tailwind.css";
+import "virtual:uno.css";
 import "./global.css";
 
 const app = new App({
