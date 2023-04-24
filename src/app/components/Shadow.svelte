@@ -5,5 +5,5 @@
 <div
   class="absolute inset-0 bg-black opacity-50 flex justify-center items-center font-bold text-2xl"
 >
-  {$_({ id: "landing.annotation" })}
+  <slot />
 </div>
