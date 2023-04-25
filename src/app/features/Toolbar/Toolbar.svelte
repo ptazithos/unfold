@@ -1,25 +1,38 @@
 <script lang="ts">
   import { getContext } from "svelte";
   import { ItemType, type RegistryConfig } from "./types";
-  import MenuRegistry from "./components/MenuRegistry.svelte";
   import { fileConfig } from "./configs/file";
-  import { EDIT_CONFIG } from "./configs/edit";
+  import { editConfig } from "./configs/edit";
+
+  import appStatus, { AppStatus } from "unfold/store/status";
+  import MenuRegistry from "./components/MenuRegistry.svelte";
 
   const api = getContext("native_api");
+  const enable = $appStatus === AppStatus.LOADED;
 
   const REGISTRY_CONFIGS: RegistryConfig[] = [
-    fileConfig(api),
-    EDIT_CONFIG,
+    fileConfig({ api, appStatus: $appStatus }),
+    editConfig({ enable }),
     {
       name: "toolbar.view",
       items: [
-        { type: ItemType.Item, name: "menu.view.output", action: () => {} },
+        {
+          type: ItemType.Item,
+          name: "menu.view.output",
+          enable,
+          action: () => {},
+        },
       ],
     },
     {
       name: "toolbar.help",
       items: [
-        { type: ItemType.Item, name: "menu.help.about", action: () => {} },
+        {
+          type: ItemType.Item,
+          name: "menu.help.about",
+          enable: true,
+          action: () => {},
+        },
       ],
     },
   ];

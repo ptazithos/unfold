@@ -7,12 +7,14 @@ export enum ItemType {
 export interface Item {
   type: ItemType.Item;
   name: string;
+  enable?: boolean;
   action: () => void;
 }
 
 export interface SubMenu {
   type: ItemType.SubMenu;
   name: string;
+  enable?: boolean;
   items: Item[];
 }
 

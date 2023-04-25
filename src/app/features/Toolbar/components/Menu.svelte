@@ -5,6 +5,8 @@
   import { _ } from "svelte-i18n";
 
   export let items: (Item | SubMenu | Separator)[];
+  export let enable = true;
+
   let parent: HTMLElement;
   let rect = { width: 0 };
   let shouldSubMenuShowOff = new Array(items.length).fill(false);
@@ -36,17 +38,23 @@
     {#if item.type === ItemType.Separator}
       <div class="border-$separator-1 border-1 my-1.5" />
     {:else if item.type === ItemType.Item}
+      {@const isEnable = (item.enable ?? true) && enable}
       <div
-        class=" hover:bg-$highlight-1 px-6 text-$font-highlight whitespace-nowrap"
-        on:mousedown={item.action}
+        class={`hover:bg-$highlight-1 px-6 ${
+          isEnable ? "text-$font-highlight" : ""
+        }  whitespace-nowrap`}
+        on:mousedown={isEnable ? item.action : () => {}}
       >
         {$_(item.name)}
       </div>
     {:else if item.type === ItemType.SubMenu}
+      {@const isEnable = (item.enable ?? true) && enable}
       <div class="relative">
         <!-- svelte-ignore a11y-mouse-events-have-key-events -->
         <div
-          class=" hover:bg-$highlight-1 px-6 text-$font-highlight"
+          class={` hover:bg-$highlight-1 px-6 ${
+            isEnable ? "text-$font-highlight" : ""
+          }`}
           on:mouseover={() => {
             onHover(i);
           }}
@@ -68,7 +76,7 @@
               onLeave(i);
             }}
           >
-            <svelte:self items={item.items} />
+            <svelte:self items={item.items} enable={isEnable} />
           </div>
         {/if}
       </div>
