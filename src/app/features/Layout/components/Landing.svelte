@@ -3,6 +3,6 @@
   import Shadow from "unfold/app/components/Shadow.svelte";
 </script>
 
-<Shadow>
+<Shadow fullScreen={false}>
   {$_({ id: "landing.annotation" })}
 </Shadow>
