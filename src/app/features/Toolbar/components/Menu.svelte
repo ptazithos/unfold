@@ -41,7 +41,7 @@
       {@const isEnable = (item.enable ?? true) && enable}
       <div
         class={`hover:bg-$highlight-1 px-6 ${
-          isEnable ? "text-$font-highlight" : ""
+          isEnable ? "text-$font-highlight" : "text-$font-disabled"
         }  whitespace-nowrap`}
         on:mousedown={isEnable ? item.action : () => {}}
       >
@@ -53,7 +53,7 @@
         <!-- svelte-ignore a11y-mouse-events-have-key-events -->
         <div
           class={` hover:bg-$highlight-1 px-6 ${
-            isEnable ? "text-$font-highlight" : ""
+            isEnable ? "text-$font-highlight" : "text-$font-disabled"
           }`}
           on:mouseover={() => {
             onHover(i);
