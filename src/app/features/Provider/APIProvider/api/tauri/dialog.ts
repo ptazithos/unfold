@@ -12,6 +12,7 @@ export function registerAPI() {
 export async function openFile() {
   const selected = await open({
     multiple: false,
+    filters: [{ name: "map", extensions: ["aoe2scenario"] }],
   });
   console.log(selected);
 }
