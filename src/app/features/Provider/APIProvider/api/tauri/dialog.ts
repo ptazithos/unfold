@@ -17,7 +17,8 @@ export async function openFile() {
     filters: [{ name: "map", extensions: ["aoe2scenario"] }],
   })) as string;
   info(selected);
-  invoke("open_scenario", { path: selected }).then((res) => {
-    info(JSON.stringify(res));
+  invoke("open_scenario", { path: selected }).then((res: string) => {
+    const scenario = JSON.parse(res);
+    info(JSON.stringify(scenario));
   });
 }
