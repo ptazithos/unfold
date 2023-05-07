@@ -1,6 +1,5 @@
 import { open } from "@tauri-apps/api/dialog";
 import { invoke } from "@tauri-apps/api/tauri";
-import { info } from "tauri-plugin-log-api";
 import { mergeContext } from "../utils";
 
 export async function initAPI() {}
@@ -16,9 +15,7 @@ export async function openFile() {
     multiple: false,
     filters: [{ name: "map", extensions: ["aoe2scenario"] }],
   })) as string;
-  info(selected);
   invoke("open_scenario", { path: selected }).then((res: string) => {
     const scenario = JSON.parse(res);
-    info(JSON.stringify(scenario));
   });
 }
