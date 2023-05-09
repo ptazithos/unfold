@@ -1,4 +1,4 @@
-import { AppStatus } from "unfold/store/status";
+import { AppStatus } from "unfold/store/app";
 import { ItemType, type RegistryConfig } from "../types";
 
 type FileParams = {

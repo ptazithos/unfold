@@ -6,6 +6,5 @@ export enum AppStatus {
   LOADED = 2,
 }
 
-const appStatus = writable(AppStatus.BEFORE_LOAD);
-
-export default appStatus;
+export const appStatus = writable(AppStatus.BEFORE_LOAD);
+export const scenarios = writable({});

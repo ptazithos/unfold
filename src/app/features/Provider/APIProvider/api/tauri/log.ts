@@ -23,34 +23,41 @@ enum LogLevel {
   Error,
 }
 
-async function log(level: LogLevel, message: string) {
-  const traces = new Error().stack?.split("\n").map((line) => line.split("@"));
+type LogConfig = {
+  location?: string;
+};
 
-  const filtered = traces?.filter(([name, location]) => {
-    return name.length > 0 && location !== "[native code]";
-  });
+async function log(level: LogLevel, message: string, config?: LogConfig) {
+  const traces = new Error().stack?.split("\n").map((line) => line.split("@"));
 
   await invoke("plugin:log|log", {
     level,
     message,
-    location: filtered?.[filtered.length >= 2 ? 2 : 0]
-      ?.filter((v) => v.length > 0)
-      .join("@"),
+    location: config?.location ?? traces[traces.length - 1].join("@"),
   });
 }
 
-async function trace(message: string): Promise<void> {
-  await log(LogLevel.Trace, message);
+export async function trace(
+  message: string,
+  config?: LogConfig
+): Promise<void> {
+  await log(LogLevel.Trace, message, config);
 }
 
-async function info(message: string): Promise<void> {
-  await log(LogLevel.Info, message);
+export async function info(message: string, config?: LogConfig): Promise<void> {
+  await log(LogLevel.Info, message, config);
 }
 
-async function debug(message: string): Promise<void> {
-  await log(LogLevel.Debug, message);
+export async function debug(
+  message: string,
+  config?: LogConfig
+): Promise<void> {
+  await log(LogLevel.Debug, message, config);
 }
 
-async function error(message: string): Promise<void> {
-  await log(LogLevel.Error, message);
+export async function error(
+  message: string,
+  config?: LogConfig
+): Promise<void> {
+  await log(LogLevel.Error, message, config);
 }

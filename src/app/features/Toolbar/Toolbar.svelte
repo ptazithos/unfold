@@ -4,7 +4,7 @@
   import { fileConfig } from "./configs/file";
   import { editConfig } from "./configs/edit";
 
-  import appStatus, { AppStatus } from "unfold/store/status";
+  import { appStatus, AppStatus } from "unfold/store/app";
   import MenuRegistry from "./components/MenuRegistry.svelte";
 
   const api = getContext("native_api");
