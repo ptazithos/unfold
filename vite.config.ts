@@ -10,6 +10,7 @@ export default defineConfig(async () => ({
     alias: [{ find: "unfold", replacement: path.resolve(__dirname, "src") }],
   },
   plugins: [
+    UnoCSS(),
     svelte({
       preprocess: [
         sveltePreprocess({
@@ -17,7 +18,6 @@ export default defineConfig(async () => ({
         }),
       ],
     }),
-    UnoCSS(),
   ],
 
   // Vite options tailored for Tauri development and only applied in `tauri dev` or `tauri build`
