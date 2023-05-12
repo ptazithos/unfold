@@ -1,11 +1,11 @@
 <script lang="ts">
   import { Pane, Splitpanes } from "svelte-splitpanes";
   import Shadow from "../../components/Shadow.svelte";
-  import Landing from "./components/Landing.svelte";
+  import Overlay from "./components/Overlay.svelte";
 </script>
 
 <div class="h-full relative">
-  <Landing />
+  <Overlay />
   <Splitpanes theme="any">
     <Pane size={20} class="sidebar"><slot name="side" /></Pane>
     <Pane>
