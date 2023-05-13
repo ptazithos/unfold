@@ -1,11 +1,10 @@
 <script lang="ts">
-  export let fullScreen: boolean;
+  export let position: "fixed" | "absolute";
+  export let opacity = 50;
 </script>
 
 <div
-  class={`${
-    fullScreen ? "fixed" : "absolute"
-  } inset-0 bg-black opacity-50 flex justify-center items-center font-bold text-2xl`}
+  class={`${position} inset-0 bg-black opacity-${opacity} flex justify-center items-center font-bold text-2xl`}
 >
   <slot />
 </div>

@@ -4,5 +4,5 @@
 </script>
 
 {#if $content}
-  <Shadow fullScreen={true}><svelte:component this={$content} /></Shadow>
+  <Shadow position="fixed"><svelte:component this={$content} /></Shadow>
 {/if}
