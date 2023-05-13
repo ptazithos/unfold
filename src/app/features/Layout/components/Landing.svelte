@@ -5,7 +5,7 @@
 </script>
 
 {#if $appStatus != AppStatus.LOADED}
-  <Shadow fullScreen={$appStatus === AppStatus.LOADING}>
+  <Shadow fullScreen={false}>
     {$_({ id: "landing.annotation" })}
   </Shadow>
 {/if}

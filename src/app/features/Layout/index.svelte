@@ -1,7 +1,7 @@
 <script lang="ts">
   import { Pane, Splitpanes } from "svelte-splitpanes";
   import Shadow from "../../components/Shadow.svelte";
-  import Overlay from "./components/Overlay.svelte";
+  import Overlay from "./components/Landing.svelte";
 </script>
 
 <div class="h-full relative">
