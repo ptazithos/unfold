@@ -1,4 +1,6 @@
 import { derived, writable } from "svelte/store";
+import { show, hide } from "./overlay";
+import Loading from "unfold/app/components/Loading.svelte";
 
 export enum AppStatus {
   BEFORE_LOAD = 0,
@@ -21,14 +23,17 @@ function createAppStore() {
 
   const completeLoading = (scenario: any) => {
     set({ status: AppStatus.LOADED, scenario });
+    hide();
   };
 
   const failLoading = () => {
     set({ status: AppStatus.BEFORE_LOAD, scenario: null });
+    hide();
   };
 
   const startLoading = () => {
     set({ status: AppStatus.LOADING, scenario: null });
+    show(Loading);
   };
 
   return {

@@ -4,7 +4,7 @@
   import { AppStatus, appStatus } from "unfold/store/app";
 </script>
 
-{#if $appStatus != AppStatus.LOADED}
+{#if $appStatus === AppStatus.BEFORE_LOAD}
   <Shadow fullScreen={false}>
     {$_({ id: "landing.annotation" })}
   </Shadow>

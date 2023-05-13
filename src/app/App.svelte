@@ -8,7 +8,7 @@
 </script>
 
 <AppContainer>
-  <Overlay />
   <Toolbar />
   <Layout><DebugDashboard slot="main" /></Layout>
+  <Overlay />
 </AppContainer>
