@@ -28,7 +28,7 @@
     }, 100);
   };
 
-  const onSubMenuFocus = (index: number) => {
+  const onSubMenuFocus = () => {
     clearTimeout(handler);
   };
 </script>
@@ -70,7 +70,7 @@
             class="absolute top-0"
             style={`left:${rect.width}px;`}
             on:mouseover={() => {
-              onSubMenuFocus(i);
+              onSubMenuFocus();
             }}
             on:mouseleave={() => {
               onLeave(i);
