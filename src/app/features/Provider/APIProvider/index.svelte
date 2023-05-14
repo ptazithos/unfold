@@ -4,10 +4,10 @@
   import TAURI from "./api/tauri/index";
   import SplashScreen from "./components/SplashScreen.svelte";
 
-  const APIModule = !!window.__TAURI__ ? TAURI : BROWSER;
+  const APIModule = window.__TAURI__ ? TAURI : BROWSER;
   const APIs = Object.entries(APIModule);
 
-  const APIPromises = APIs.map(([name, api]) => {
+  const APIPromises = APIs.map(([, api]) => {
     return api.initAPI();
   });
 
@@ -17,11 +17,11 @@
         status.doLoad("api");
       }, 1500);
     })
-    .catch((err) => {});
+    .catch(() => {});
 
   $: {
     if ($status === true) {
-      APIs.map(([name, api]) => {
+      APIs.map(([, api]) => {
         api.registerAPI();
       });
     }
