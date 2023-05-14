@@ -1,6 +1,6 @@
 <script lang="ts">
-  import { beforeUpdate, getContext } from "svelte";
-  import { ItemType, type RegistryConfig } from "./types";
+  import { getContext } from "svelte";
+  import { ItemType } from "./types";
   import { fileConfig } from "./configs/file";
   import { editConfig } from "./configs/edit";
 
