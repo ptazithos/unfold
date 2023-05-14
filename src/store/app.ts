@@ -19,7 +19,7 @@ const APP_DEFAULT_STORE: APPStore = {
 };
 
 function createAppStore() {
-  const { subscribe, set, update } = writable<APPStore>(APP_DEFAULT_STORE);
+  const { subscribe, set, } = writable<APPStore>(APP_DEFAULT_STORE);
 
   const completeLoading = (scenario: any) => {
     set({ status: AppStatus.LOADED, scenario });
