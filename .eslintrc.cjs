@@ -1,8 +1,12 @@
 module.exports = {
-  extends: ["plugin:svelte/recommended", "plugin:svelte/prettier",'eslint:recommended'],
+  "env": {
+    "browser": true,
+    "node": true
+  },
+  extends: ["plugin:svelte/recommended", "plugin:svelte/prettier", 'eslint:recommended'],
   parser: "@typescript-eslint/parser",
   parserOptions: {
-    project: "tsconfig.json",
+    //project: "tsconfig.json",
     extraFileExtensions: [".svelte"],
   },
   overrides: [
