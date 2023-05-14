@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { shown, position, component, show, hide } from "../../../store/float";
+  import { shown, position, show, hide } from "../../../store/float";
   import Button from "../../components/Button.svelte";
   import ConfigContainer from "./components/ConfigContainer.svelte";
   import { _ } from "svelte-i18n";
