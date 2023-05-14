@@ -4,13 +4,13 @@
   import ConfigContainer from "./components/ConfigContainer.svelte";
   import { _ } from "svelte-i18n";
 
-  function changeTheme() {
+  const changeTheme = () => {
     if ($theme === ThemeName.DEFAULT) {
       theme.set(ThemeName.MONOKAI);
     } else {
       theme.set(ThemeName.DEFAULT);
     }
-  }
+  };
 </script>
 
 <ConfigContainer>
