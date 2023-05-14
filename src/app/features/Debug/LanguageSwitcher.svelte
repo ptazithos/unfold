@@ -3,13 +3,13 @@
   import ConfigContainer from "./components/ConfigContainer.svelte";
   import { language, _ } from "../../../store/language";
 
-  function switchLanguage() {
+  const switchLanguage = () => {
     if ($language === "en") {
       language.switch("cn");
     } else {
       language.switch("en");
     }
-  }
+  };
 </script>
 
 <ConfigContainer>
