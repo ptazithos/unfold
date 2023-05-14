@@ -23,7 +23,7 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         action: async () => {
           startLoading();
           const selected = await api.selectFile();
-          if (!!selected) {
+          if (selected) {
             const scenario = JSON.parse(
               await invoke("open_scenario", {
                 path: selected,
