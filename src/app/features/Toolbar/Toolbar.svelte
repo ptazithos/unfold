@@ -44,7 +44,7 @@
 </script>
 
 <div class="w-full h-6 bg-$background-2 flex items-center">
-  {#each REGISTRY_CONFIGS as config, i}
+  {#each REGISTRY_CONFIGS as config}
     <MenuRegistry {config} />
   {/each}
 </div>
