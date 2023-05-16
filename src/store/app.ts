@@ -21,13 +21,17 @@ const APP_DEFAULT_STORE: APPStore = {
 function createAppStore() {
   const { subscribe, set, } = writable<APPStore>(APP_DEFAULT_STORE);
 
+  const cleanExisting = () =>{
+    set({ status: AppStatus.BEFORE_LOAD, scenario: null });
+  }
+
   const completeLoading = (scenario: any) => {
     set({ status: AppStatus.LOADED, scenario });
     hide();
   };
 
   const failLoading = () => {
-    set({ status: AppStatus.BEFORE_LOAD, scenario: null });
+    cleanExisting()
     hide();
   };
 
@@ -36,11 +40,14 @@ function createAppStore() {
     show(Loading);
   };
 
+
+
   return {
     subscribe,
     completeLoading,
     failLoading,
     startLoading,
+    cleanExisting
   };
 }
 

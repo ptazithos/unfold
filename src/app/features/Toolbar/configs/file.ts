@@ -11,7 +11,7 @@ type FileParams = {
 export const fileConfig = (params: FileParams): RegistryConfig => {
   const { api, appStatus } = params;
   const enable = appStatus === AppStatus.LOADED;
-  const { startLoading, completeLoading, failLoading } = appStore;
+  const { cleanExisting, startLoading, completeLoading, failLoading } = appStore;
 
   return {
     name: "toolbar.file",
@@ -65,7 +65,9 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         type: ItemType.Item,
         name: "menu.file.close",
         enable,
-        action: () => {},
+        action: () => {
+          cleanExisting()
+        },
       },
     ],
   };
