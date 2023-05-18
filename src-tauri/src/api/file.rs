@@ -1,7 +1,14 @@
-use aoe2_probe::Scenario;
+use aoe2_probe::{parse::Token, ExportFormat, Scenario};
 
 #[tauri::command]
 pub fn open_scenario(path: String) -> String {
     let scenario = Scenario::from_file(&path).unwrap();
     serde_json::to_string(&scenario.versio).unwrap()
+}
+
+#[tauri::command]
+pub fn save_scenario(raw: String, path: String) {
+    let versio: Token = serde_json::from_str(&raw).unwrap();
+    let scenario = Scenario::from_versio(&versio).unwrap();
+    scenario.to_file(&path, ExportFormat::AoE2Scenario).unwrap();
 }
