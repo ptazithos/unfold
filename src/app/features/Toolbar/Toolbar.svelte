@@ -4,7 +4,7 @@
   import { fileConfig } from "./configs/file";
   import { editConfig } from "./configs/edit";
 
-  import { appStatus, AppStatus } from "unfold/store/app";
+  import { appStatus, AppStatus, scenario } from "unfold/store/app";
   import MenuRegistry from "./components/MenuRegistry.svelte";
 
   const api = getContext("native_api");
@@ -15,10 +15,11 @@
     const enable = $appStatus === AppStatus.LOADED;
 
     REGISTRY_CONFIGS = [
-      fileConfig({ api, appStatus: $appStatus }),
+      fileConfig({ api, appStatus: $appStatus, scenario: $scenario }),
       editConfig({ enable }),
       {
         name: "toolbar.view",
+
         items: [
           {
             type: ItemType.Item,

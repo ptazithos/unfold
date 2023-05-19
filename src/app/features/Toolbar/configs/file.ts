@@ -6,12 +6,14 @@ import { ItemType, type RegistryConfig } from "../types";
 type FileParams = {
   api: any;
   appStatus: AppStatus;
+  scenario: any;
 };
 
 export const fileConfig = (params: FileParams): RegistryConfig => {
-  const { api, appStatus } = params;
+  const { api, appStatus, scenario } = params;
   const enable = appStatus === AppStatus.LOADED;
-  const { cleanExisting, startLoading, completeLoading, failLoading } = appStore;
+  const { cleanExisting, startLoading, completeLoading, failLoading } =
+    appStore;
 
   return {
     name: "toolbar.file",
@@ -22,7 +24,7 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         enable: true,
         action: async () => {
           startLoading();
-          const selected = await api.selectFile();
+          const selected = await api.openFile();
           if (selected) {
             const scenario = JSON.parse(
               await invoke("open_scenario", {
@@ -36,7 +38,20 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         },
       },
       { type: ItemType.Separator },
-      { type: ItemType.Item, name: "menu.file.save", enable, action: () => {} },
+      {
+        type: ItemType.Item,
+        name: "menu.file.save",
+        enable,
+        action: async () => {
+          const selected = await api.saveFile();
+          if (selected) {
+            await invoke("save_scenario", {
+              raw: JSON.stringify(scenario),
+              path: selected,
+            });
+          }
+        },
+      },
       {
         type: ItemType.Item,
         name: "menu.file.save_as_json",
@@ -66,7 +81,7 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         name: "menu.file.close",
         enable,
         action: () => {
-          cleanExisting()
+          cleanExisting();
         },
       },
     ],
