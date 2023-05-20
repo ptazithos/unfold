@@ -1,5 +1,3 @@
-import { invoke } from "@tauri-apps/api/tauri";
-
 import { AppStatus, appStore } from "unfold/store/app";
 import { ItemType, type RegistryConfig } from "../types";
 
@@ -11,9 +9,8 @@ type FileParams = {
 
 export const fileConfig = (params: FileParams): RegistryConfig => {
   const { api, appStatus, scenario } = params;
+  const { cleanExisting } = appStore;
   const enable = appStatus === AppStatus.LOADED;
-  const { cleanExisting, startLoading, completeLoading, failLoading } =
-    appStore;
 
   return {
     name: "toolbar.file",
@@ -23,18 +20,7 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         name: "menu.file.open_file",
         enable: true,
         action: async () => {
-          startLoading();
-          const selected = await api.openFile();
-          if (selected) {
-            const scenario = JSON.parse(
-              await invoke("open_scenario", {
-                path: selected,
-              })
-            );
-            completeLoading(scenario);
-          } else {
-            failLoading();
-          }
+          await api.openFile();
         },
       },
       { type: ItemType.Separator },
@@ -43,13 +29,7 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         name: "menu.file.save",
         enable,
         action: async () => {
-          const selected = await api.saveFile();
-          if (selected) {
-            await invoke("save_scenario", {
-              raw: JSON.stringify(scenario),
-              path: selected,
-            });
-          }
+          await api.saveFile(scenario);
         },
       },
       {
