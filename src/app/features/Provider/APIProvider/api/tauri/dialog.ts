@@ -33,15 +33,23 @@ export async function openFile() {
   }
 }
 
-export async function saveFile(scenario: any) {
+export enum Format {
+  AoE2Scenario = 0,
+  JSON = 1,
+}
+
+export async function saveFile(scenario: any, format: Format) {
+  const extension = format === Format.AoE2Scenario ? "aoe2scenario" : "json";
+
   const selected = (await save({
-    filters: [{ name: "map", extensions: ["aoe2scenario"] }],
+    filters: [{ name: "map", extensions: [extension] }],
   })) as string | undefined;
 
   if (selected) {
     await invoke("save_scenario", {
       raw: JSON.stringify(scenario),
       path: selected,
+      format,
     });
   }
 }

@@ -1,5 +1,6 @@
 import { AppStatus, appStore } from "unfold/store/app";
 import { ItemType, type RegistryConfig } from "../types";
+import { Format } from "../../Provider/APIProvider/api/tauri/dialog";
 
 type FileParams = {
   api: any;
@@ -29,14 +30,16 @@ export const fileConfig = (params: FileParams): RegistryConfig => {
         name: "menu.file.save",
         enable,
         action: async () => {
-          await api.saveFile(scenario);
+          await api.saveFile(scenario, Format.AoE2Scenario);
         },
       },
       {
         type: ItemType.Item,
         name: "menu.file.save_as_json",
         enable,
-        action: () => {},
+        action: async () => {
+          await api.saveFile(scenario, Format.JSON);
+        },
       },
       { type: ItemType.Separator },
       {

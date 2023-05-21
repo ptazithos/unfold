@@ -7,8 +7,9 @@ pub fn open_scenario(path: String) -> String {
 }
 
 #[tauri::command]
-pub fn save_scenario(raw: String, path: String) {
+pub fn save_scenario(raw: String, path: String, format: ExportFormat) {
     let versio: Token = serde_json::from_str(&raw).unwrap();
     let scenario = Scenario::from_versio(&versio).unwrap();
-    scenario.to_file(&path, ExportFormat::AoE2Scenario).unwrap();
+
+    scenario.to_file(&path, format).unwrap();
 }
