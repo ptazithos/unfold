@@ -2,6 +2,8 @@ import { open, save } from "@tauri-apps/api/dialog";
 import { mergeContext } from "../utils";
 import { invoke } from "@tauri-apps/api";
 import { appStore } from "unfold/store/app";
+import { hide, show } from "unfold/store/overlay";
+import Loading from "unfold/app/components/Loading.svelte";
 
 export async function initAPI() {}
 
@@ -39,6 +41,7 @@ export enum Format {
 }
 
 export async function saveFile(scenario: any, format: Format) {
+  show(Loading);
   const extension = format === Format.AoE2Scenario ? "aoe2scenario" : "json";
 
   const selected = (await save({
@@ -52,4 +55,5 @@ export async function saveFile(scenario: any, format: Format) {
       format,
     });
   }
+  hide();
 }
