@@ -42,5 +42,8 @@
   "landing": {
     "annotation": "\"Start with opening AoE2Scenario file\""
   },
-  "loading": "\"Loading\""
+  "loading": "\"Loading\"",
+  "structure": {
+    "title": "EXPLORER"
+  }
 }
