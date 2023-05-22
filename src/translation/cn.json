@@ -42,7 +42,6 @@
       "annotation": "\"从打开AoE2Scenario文件开始\""
     }
   },
-  "loading": "\"加载中\"",
   "structure": {
     "title": "资源管理器"
   }
