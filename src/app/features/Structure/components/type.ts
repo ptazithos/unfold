@@ -14,7 +14,7 @@ export type TreeItem = {
 
 export type TreeSet = {
   type: ElementType.Set;
-  children: TreeElement[];
+  elements: TreeElement[];
 } & TreeCommon;
 
 export type TreeElement = TreeSet | TreeItem;
